@@ -7,7 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import com.captsone.pantura.R
 import com.captsone.pantura.databinding.ActivityBaseBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
     private lateinit var navHostFragment: NavHostFragment

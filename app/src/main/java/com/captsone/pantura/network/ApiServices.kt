@@ -1,4 +1,4 @@
 package com.captsone.pantura.network
 
-class ApiServices {
+interface ApiServices {
 }

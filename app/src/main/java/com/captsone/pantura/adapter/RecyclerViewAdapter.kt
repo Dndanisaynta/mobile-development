@@ -8,7 +8,9 @@ import com.captsone.pantura.model.Laporan
 
 class RecyclerViewAdapter(
     private var dataList: List<Laporan>,
-    private val onClickListener: (Laporan) -> Unit
+    private val onCardClickListener: (Laporan) -> Unit,
+    private val onEditClickListener: (Laporan) -> Unit,
+    private val onDeleteClickListener: (Laporan) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
@@ -21,9 +23,6 @@ class RecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataList[position]
         holder.bind(item)
-        holder.itemView.setOnClickListener {
-            onClickListener(item)
-        }
     }
 
     override fun getItemCount(): Int {
@@ -38,9 +37,18 @@ class RecyclerViewAdapter(
     inner class ViewHolder(private val binding: CardLaporanBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Laporan) {
+            binding.root.setOnClickListener {
+                onCardClickListener(item)
+            }
             binding.dateCard.text = item.tanggal
             binding.cardLocation.text = item.location
             binding.cardDescription.text = item.deskripsi
+            binding.deleteButton.setOnClickListener{
+                onDeleteClickListener(item)
+            }
+            binding.editButton.setOnClickListener {
+                onEditClickListener(item)
+            }
         }
     }
 }

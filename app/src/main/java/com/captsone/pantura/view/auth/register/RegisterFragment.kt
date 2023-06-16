@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.captsone.pantura.R
 import com.captsone.pantura.databinding.FragmentLoginBinding
 import com.captsone.pantura.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private lateinit var viewModel: RegisterViewModel
     private var _binding: FragmentRegisterBinding? = null

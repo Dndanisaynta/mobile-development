@@ -13,7 +13,9 @@ import com.captsone.pantura.R
 import com.captsone.pantura.databinding.FragmentLoginBinding
 import com.captsone.pantura.view.ScreenView
 import com.captsone.pantura.view.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment(), ScreenView {
     private lateinit var viewModel: LoginViewModel
     private var _binding: FragmentLoginBinding? = null

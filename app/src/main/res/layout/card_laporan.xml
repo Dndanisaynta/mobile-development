@@ -33,6 +33,7 @@
             app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
